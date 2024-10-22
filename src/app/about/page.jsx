@@ -4,7 +4,10 @@ import TopNav from '@/components/Header/TopNav/TopNav';
 import Partner from '@/components/Partner/Partner';
 import AboutSection from '@/components/Section/AboutSection';
 import Breadcrumb from '@/components/Section/Breadcrumb';
+import Counter from '@/components/Section/Counter';
+import Service from '@/components/Service/Service';
 import React from 'react';
+import serviceData from '@/data/service.json'
 
 const AboutPage = () => {
     return (
@@ -17,6 +20,8 @@ const AboutPage = () => {
      <main className="content">
         <Breadcrumb link="About Us" img="/images/header.webp" title='About Us' desc="The jobs report soundly beat expectations, with job gains broadly spread across the economy and about 60% higher" />
         <AboutSection/>
+        <Counter classname="lg:pb-[50px] sm:pb-16 pb-10" />
+        <Service data={serviceData} />
      </main>
 
      <Partner className='lg:mt-[100px] sm:mt-16 mt-10' /> 
