@@ -97,33 +97,7 @@
         }
     }
 
-    &.style-four {
-        .list-case-study {
-            @media (max-width: 1024px) and (min-width: 768px) {
-                .case-study-item {
-                    &:last-child {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .case-study-item {
-            &:hover {
-                .bg-img {
-                    img {
-                        transform: scale(1.08);
-                    }
-                }
-
-                .infor {
-                    .heading6 {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
+ 
 }
 
 .case-study-item {
@@ -202,17 +176,7 @@
         }
     }
 
-    &.style-three {
-        .item-main {
-            .infor {
-                .heading6 {
-                    &:hover {
-                        color: var(--gradient);
-                    }
-                }
-            }
-        }
-    }
+    
 }
 
 .menu-tab {
