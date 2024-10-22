@@ -6,7 +6,7 @@ import * as Icon from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image';
 import Link from 'next/link';
 import 'swiper/css/bundle'
-
+ 
 const Slider = () => {
     return (
         <>
