@@ -28,8 +28,22 @@ const Testimonial = () => {
         }}
         >
 
-     <SwiperSlide>
+     <SwiperSlide className='lg:pb-24 pb-20'>
+        <div className='text-2xl font-medium text-center'>
+            {String.raw`"`}Get personalized financial advice to help reach your financial goals.Get personalized financial advice to help reach your financial goals. {String.raw`"`}
+        </div>
+        <div className='text-button text-center mt-5'>
+            Kazi Ariyan // CEO
+        </div> 
+     </SwiperSlide>
 
+     <SwiperSlide className='lg:pb-24 pb-20'>
+        <div className='text-2xl font-medium text-center'>
+            {String.raw`"`}Get personalized financial advice to help reach your financial goals.Get personalized financial advice to help reach your financial goals. {String.raw`"`}
+        </div>
+        <div className='text-button text-center mt-5'>
+            Khan // Manager
+        </div> 
      </SwiperSlide>
 
 
