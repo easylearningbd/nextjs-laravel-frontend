@@ -9,7 +9,7 @@ const ServiceItem = ({ data,number}) => {
             <Link className='service-item-main h-full' href={'/service/service-details/[slug]'}
             as={`/service/service-details/${data.title.toLowerCase().replace(/ /g,'-')}`}
             >
-
+ 
             <div className='heading flex items-center justify-between'>
                 <i className={`${data.icon} text-blue md:text-6xl text-5xl` }></i>
                 <div className='number heading3 text-placehover text-slate-400'>

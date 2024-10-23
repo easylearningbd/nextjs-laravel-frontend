@@ -13,7 +13,9 @@ return (
             <div className='list flex flex-col gap-y-10'>
     {
         data.slice(0, 5).map(( item,index ) => (
-        <Link className='blog-item flex max-md:flex-col md:items-center gap-7 gap-y-5' href='/'>
+        <Link className='blog-item flex max-md:flex-col md:items-center gap-7 gap-y-5' href={'/blog/blog-details/[slug]'}
+        as={`/blog/blog-details/${item.title.toLowerCase().replace(/ /g,'-')}`}
+         >
 
         <div className='w-full md:w-1/2'>
         <div className='bg-img w-full overflow-hidden rounded-2xl'>
@@ -92,7 +94,8 @@ return (
         <div className='list-recent-post flex flex-col gap-6 mt-4'>
             {
                 data.slice(0,3).map((item, index) => (
-                <Link key={index} className='recent-post-item flex items-start gap-4 cursor-pointer' href='/'>
+                <Link key={index} className='recent-post-item flex items-start gap-4 cursor-pointer' href={'/blog/blog-details/[slug]'}
+                as={`/blog/blog-details/${item.title.toLowerCase().replace(/ /g,'-')}`}>
             <div className='item-img flex-shrink-0 w-20 h-20 rounded'>
                 <Image width={5000} height={5000} src={item.img} className='w-full h-full object-cover'/> 
             </div>
