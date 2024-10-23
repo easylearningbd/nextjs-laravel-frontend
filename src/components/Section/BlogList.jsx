@@ -83,17 +83,42 @@ return (
             </div>
             </Link>
 
-        </div> 
-
-    </div>
-
+        </div>  
     </div>
 
 
+    <div className='recent-post-block md:mt-10 mt-6'>
+        <div className='recent-post-heading heading7'>Recent Post</div>
+        <div className='list-recent-post flex flex-col gap-6 mt-4'>
+            {
+                data.slice(0,3).map((item, index) => (
+                <Link key={index} className='recent-post-item flex items-start gap-4 cursor-pointer' href='/'>
+            <div className='item-img flex-shrink-0 w-20 h-20 rounded'>
+                <Image width={5000} height={5000} src={item.img} className='w-full h-full object-cover'/> 
+            </div>
 
+            <div className='item-infor w-full'>
+                <div className='item-date flex items-center'>
+                <Icon.CalendarBlank weight='bold' />
+                <span className='ml-1 caption2'>{item.date}</span>  
+                </div>
+                <div className='item-title mt-1'>{item.title}</div>
+
+            </div>
+                
+                </Link>
+
+                ))
+            }
 
         </div>
 
+    </div>
+
+
+
+    </div> 
+        </div> 
     </div>
     
 </div>
