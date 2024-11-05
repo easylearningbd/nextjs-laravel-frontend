@@ -9,8 +9,15 @@ import serviceData from '@/data/service.json'
 import Image from 'next/image';
 import Link from 'next/link';
 import { API_BASE_URL, IMAGE_BASE_URL } from '@/config/config';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const ServiceDetails = ({ params }) => {
+
+    const getTextFromHTML = (html) => {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        return div.textContent || div.innerText || '';
+    }
 
     const { slug } = params;
 
@@ -35,6 +42,7 @@ const ServiceDetails = ({ params }) => {
         }
 
     },[slug]);
+ 
 
 
     return (
@@ -44,7 +52,13 @@ const ServiceDetails = ({ params }) => {
           <Menu/>
       </header>
 
-     <main className="content">
+    {
+        loading ? ( 
+            <div className='flex justify-center items-center h-[500px]'>
+                <ClipLoader color='#3498db' size={50} />
+            </div>
+        ) : (
+<main className="content">
         <Breadcrumb link="Our Services Details" img="/images/header.webp" title={serviceDetails.service_name} desc={serviceDetails.service_short} />
     
     <div className='content-detail-block lg:py-[100px] sm:py-16 py-10'>
@@ -61,7 +75,7 @@ const ServiceDetails = ({ params }) => {
             <Image width={5000} height={5000} className='w-full h-full rounded-xl' src={`${IMAGE_BASE_URL}/${serviceDetails.image}`} /> 
         </div>
         <div className='body2 text-secondary mt-4'>
-        {serviceDetails.service_desc }
+        {getTextFromHTML(serviceDetails.service_desc) }
         </div> 
          </div>
 
@@ -142,6 +156,11 @@ const ServiceDetails = ({ params }) => {
 
      
      </main>
+
+        )
+    }
+
+     
 
      <Partner className='lg:mt-[100px] sm:mt-16 mt-10' /> 
       <footer id="footer">
