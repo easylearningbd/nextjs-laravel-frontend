@@ -13,7 +13,7 @@ const Slider = () => {
 
     const [sliders, setSliders] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log(sliders)
+    // console.log(sliders)
 
     useEffect(() => {
         const fetchItem = async () => {

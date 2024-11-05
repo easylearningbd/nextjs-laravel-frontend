@@ -7,7 +7,7 @@ const ServiceItem = ({ data,number}) => {
         <div className='service-item p-8 bg-white rounded-lg border border-line hover-box-shadow'>
 
             <Link className='service-item-main h-full' href={'/service/service-details/[slug]'}
-            as={`/service/service-details/${data.title.toLowerCase().replace(/ /g,'-')}`}
+            as={`/service/service-details/${data.service_name.toLowerCase().replace(/ /g,'-')}`}
             >
  
             <div className='heading flex items-center justify-between'>
@@ -17,10 +17,10 @@ const ServiceItem = ({ data,number}) => {
                 </div> 
             </div>
             <div className='heading6 hover:text-blue duration-300 mt-6'>
-                {data.title}
+                {data.service_name}
                 </div>
                 <div className='text-secondary mt-2'>
-                {data.desc}
+                {data.service_short}
                 </div>
 
             </Link>
