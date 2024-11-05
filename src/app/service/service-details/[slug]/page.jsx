@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import serviceData from '@/data/service.json'
 import Image from 'next/image';
 import Link from 'next/link';
-import { API_BASE_URL } from '@/config/config';
+import { API_BASE_URL, IMAGE_BASE_URL } from '@/config/config';
 
 const ServiceDetails = ({ params }) => {
 
@@ -45,7 +45,7 @@ const ServiceDetails = ({ params }) => {
       </header>
 
      <main className="content">
-        <Breadcrumb link="Our Services Details" img="/images/header.webp" title='Our Services Details' desc="The jobs report soundly beat expectations, with job gains broadly spread across the economy and about 60% higher" />
+        <Breadcrumb link="Our Services Details" img="/images/header.webp" title={serviceDetails.service_name} desc={serviceDetails.service_short} />
     
     <div className='content-detail-block lg:py-[100px] sm:py-16 py-10'>
         <div className='container'>
@@ -55,15 +55,13 @@ const ServiceDetails = ({ params }) => {
             
         <div className='w-full xl:pr-[80px]'>
         <div className='heading3'>
-        Cryptocurrency Trading
+        {serviceDetails.service_name}
         </div>
         <div className='bg-img mt-5 mb-5'>
-            <Image width={5000} height={5000} className='w-full h-full rounded-xl' src='/images/assessment.webp' /> 
+            <Image width={5000} height={5000} className='w-full h-full rounded-xl' src={`${IMAGE_BASE_URL}/${serviceDetails.image}`} /> 
         </div>
         <div className='body2 text-secondary mt-4'>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  
+        {serviceDetails.service_desc }
         </div> 
          </div>
 
