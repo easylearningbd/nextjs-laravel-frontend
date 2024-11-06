@@ -43,7 +43,12 @@ const BlogList = ( ) => {
         fetchCatItem();
     },[]);
 
-
+    const getTextFromHTML = (html, limit = 300) => {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const text = div.textContent || div.innerText || '';
+        return text.length > limit ? text.substring(0,limit) + '...' : text;
+    }
 
  
 return (
@@ -93,7 +98,7 @@ return (
                 </div> 
             </div>
         
-            <div className='body3 text-secondary mt-4 pb-4'>{item.long_descp}</div>
+            <div className='body3 text-secondary mt-4 pb-4'> {getTextFromHTML(item.long_descp) }</div>
             <div className='read font-bold underline'>Read More</div>
         
             </div>
@@ -124,30 +129,16 @@ return (
         <div className='heading6'>Blog Category</div> 
 
         <div className='list-nav mt-4'>
-            <Link className='nav-item  ' href='/'>
-            <div className='text-button text-secondary mt-2'>
-            payment solution
+            
+        {
+            categories.map((cat) => (
+           <div className='text-button text-secondary mt-2'>
+           { cat.blog_category }
             </div>
-            </Link>
-
-            <Link className='nav-item  ' href='/'>
-            <div className='text-button text-secondary mt-2'>
-            personal finance
-            </div>
-            </Link>
-
-            <Link className='nav-item ' href='/'>
-            <div className='text-button text-secondary mt-2'>
-            online banking
-            </div>
-            </Link>
-
-
-            <Link className='nav-item ' href='/'>
-            <div className='text-button text-secondary mt-2'>
-            financial planning
-            </div>
-            </Link>
+            ))
+        }     
+            
+             
 
         </div>  
     </div>
