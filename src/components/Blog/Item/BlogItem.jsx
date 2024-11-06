@@ -5,7 +5,7 @@ import * as Icon from '@phosphor-icons/react/dist/ssr'
 import { IMAGE_BASE_URL } from '@/config/config';
 
 const BlogItem = ({data,key}) => {
-
+ 
     const formattedDate = new Date(data.created_at).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',

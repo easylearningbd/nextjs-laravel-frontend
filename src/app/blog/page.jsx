@@ -18,7 +18,7 @@ const BlogPage = () => {
 
      <main className="content">
         <Breadcrumb link="Blog" img="/images/header.webp" title='Blog'  /> 
-        <BlogList data={blogData} />
+        <BlogList/>
      </main>
 
      <Partner className='lg:mt-[100px] sm:mt-16 mt-10' /> 
