@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { API_BASE_URL, IMAGE_BASE_URL } from '@/config/config';
 import ClipLoader from 'react-spinners/ClipLoader';
-
+ 
 const ServiceDetails = ({ params }) => {
 
     const getTextFromHTML = (html) => {
@@ -23,7 +23,7 @@ const ServiceDetails = ({ params }) => {
 
     const [serviceDetails, setServiceDetails] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log(serviceDetails);
+    // console.log(serviceDetails);
 
     useEffect(() => {
         if (slug) {

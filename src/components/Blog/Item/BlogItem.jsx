@@ -16,7 +16,7 @@ const BlogItem = ({data,key}) => {
 
     return (
         <div className='blog-item'>
-            <Link className='blog-item-main h-full block bg-white border border-line overflow-hidden rounded-2xl hover-box-shadow duration-500'href={'/blog/blog-details/[slug]'}
+            <Link className='blog-item-main h-full block bg-white border border-line overflow-hidden rounded-2xl hover-box-shadow duration-500' href={'/blog/blog-details/[slug]'}
             as={`/blog/blog-details/${data.post_slug.toLowerCase().replace(/ /g,'-')}`}>
 
 
