@@ -17,7 +17,7 @@ const ContactPage = () => {
         email: '',
         message: '' 
     });
-    console.log(formData)
+   // console.log(formData)
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
